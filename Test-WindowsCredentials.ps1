@@ -99,7 +99,8 @@ if([EpicCredTester]::LogonUser($user,$domain,[System.Runtime.InteropServices.Mar
     #We never need to use the pointer. So closing it out.
     [EpicCredTester]::CloseHandle($intPointer) | Out-Null
     return $true
-}else
+}
+else
 {
     #This error comes from the function due to the "SetLastError" attribute when instantiating the method.
     $lastError = [System.Runtime.InteropServices.Marshal]::GetLastWin32Error()
